@@ -34,7 +34,7 @@ function Mobile() {
           >
             <span className="flex gap-2 items-center justify-center text-base">
               <FiMessageSquare />
-              <span className="text-sm">What is Programming?</span>
+              <span className="text-sm">What are the courses offered in SEA?</span>
             </span>
           </span>
           <span
@@ -44,7 +44,7 @@ function Mobile() {
           >
             <span className="flex gap-2 items-center justify-center text-base">
               <FiMessageSquare />
-              <span className="text-sm">How to use an API?</span>
+              <span className="text-sm">What is Computer Engineering Course?</span>
             </span>
           </span>
         </div>
