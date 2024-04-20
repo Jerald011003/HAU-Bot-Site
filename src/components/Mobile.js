@@ -66,7 +66,7 @@ function Mobile() {
                 alt="user"
                 className="w-8 h-8 object-cover rounded-sm"
               />
-              Jerald
+              Guest
             </span>
             <span className="rounded-md  px-1.5 py-0.5 text-xs font-medium uppercase text-gray-500">
               <SlOptions />
