@@ -11,7 +11,7 @@ function Mobile() {
       <div
         className={
           Mobile
-            ? "h-screen bg-gray-900 w-[300px]  flex items-center justify-between p-2 text-white flex-col translate-x-0"
+            ? "h-screen bg-red-800/80 w-[300px]  flex items-center justify-between p-2 text-white flex-col translate-x-0"
             : "hidden"
         }
       >
@@ -49,7 +49,7 @@ function Mobile() {
           </span>
         </div>
         {/* bottom section  */}
-        <div className="w-full border-t border-gray-600 flex flex-col gap-2 items-center justify-center p-2">
+        <div className="w-full border-gray-600 flex flex-col gap-2 items-center justify-center p-2">
           <span className="rounded w-full py-2 px-2 text-xs flex gap-1 items-center justify-between cursor-pointer hover:bg-gray-800 transition-all duration-300">
             {/* <span className="flex gap-1 items-center justify-center text-sm">
               <FiUser />
