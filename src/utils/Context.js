@@ -37,11 +37,14 @@ const AppContext = ({ children }) => {
       }
     });
   
-    setMessage([
-      ...message,
-      { text, isBot: false },
-      { text: response, isBot: true },
-    ]);
+    // Add a delay of 1 second (1000 milliseconds) before showing the bot response
+    setTimeout(() => {
+      setMessage([
+        ...message,
+        { text, isBot: false },
+        { text: response, isBot: true },
+      ]);
+    }, 500);
   };
   
 
@@ -57,15 +60,16 @@ const AppContext = ({ children }) => {
     const text = e.target.innerText;
     setMessage([...message, { text, isBot: false }]);
     
-    // Simulated AI response
-    let response;
-    if (text.includes("courses offered")) {
-      response = "The School of Engineering and Architecture (SEA) offers various courses including Computer Engineering, Civil Engineering, Electrical Engineering, and Architecture.";
-    } else if (text.includes("Computer Engineering Course")) {
-      response = "Computer Engineering is a discipline that integrates several fields of computer science and electronics engineering to develop computer hardware and software.";
-    } else {
-      response = "Sorry, I couldn't understand your question.";
-    }
+    let response = "Sorry, I couldn't understand your question.";
+  
+    // Iterate through each item in details
+    details.forEach((output) => {
+      // Check if the user's message includes any keyword from output.questions
+      if (text.toLowerCase().includes(output.questions.toLowerCase())) {
+        // Set the response to output.chatmessages
+        response = output.chatmessages;
+      }
+    });
   
     setMessage([
       ...message,
@@ -73,6 +77,7 @@ const AppContext = ({ children }) => {
       { text: response, isBot: true },
     ]);
   };
+  
   const [details, setDetails] = useState([]);
 
   useEffect(() => {
