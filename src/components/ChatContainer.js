@@ -42,9 +42,10 @@ function ChatContainer() {
       </span>
       {/* chat section */}
       <Chat />
+      
       {/* chat input section */}
       <div className=" w-full  m-auto flex items-center justify-center flex-col gap-2 my-2">
-        <span className="flex gap-2 items-center justify-center bg-gray-600 rounded-lg shadow-md w-[90%] lg:w-2/5 xl:w-1/2">
+        <span className="flex gap-2 items-center justify-center bg-gray-600 rounded-lg shadow-md w-[90%] lg:w-4/5 xl:w-4/5">
           <input
             type="text"
             placeholder="Send a message"
@@ -63,6 +64,7 @@ function ChatContainer() {
             }
             onClick={handleSend}
           />
+      
         </span>
         <p className="lg:text-xs text-gray-400 text-center text-[10px]">
          

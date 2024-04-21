@@ -14,10 +14,18 @@ function Mobile() {
             ? "h-screen bg-red-500 w-[300px]  flex items-center justify-between p-2 text-white flex-col translate-x-0"
             : "hidden"
         }
+
+        style={{
+          backgroundImage: "url('/campus.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+         
+          opacity: 0.9, // Increase the opacity of the text (0.9 is an example)
+        }}
       >
         <div className="flex items-start justify-between w-full">
           <span
-            className="border border-gray-600  rounded w-full py-2 text-xs flex gap-1 items-center justify-center cursor-pointer "
+            className="border border-gray-600 bg-gray-800  rounded w-full py-2 text-xs flex gap-1 items-center justify-center cursor-pointer "
             onClick={() => window.location.reload()}
           >
             <AiOutlinePlus fontSize={18} />
@@ -92,18 +100,22 @@ function Mobile() {
             <span className="text-sm">SEA's Objective</span>
           </span>
         </span>
+
+        <span
+          className="rounded w-full py-3 px-2 text-xs my-2 flex gap-2 items-center justify-between cursor-pointer hover:bg-gray-800 transition-all duration-300 overflow-hidden truncate whitespace-nowrap "
+          value={"What is CpE?"}
+          onClick={handleQuery}
+        >
+          <span className="flex gap-2 items-center justify-center text-base">
+            <FiMessageSquare />
+            <span className="text-sm">Campus Map</span>
+          </span>
+        </span>
+
         </div>
         {/* bottom section  */}
         <div className="w-full border-gray-600 flex flex-col gap-2 items-center justify-center p-2">
-          <span className="rounded w-full py-2 px-2 text-xs flex gap-1 items-center justify-between cursor-pointer hover:bg-gray-800 transition-all duration-300">
-            {/* <span className="flex gap-1 items-center justify-center text-sm">
-              <FiUser />
-              Upgrade to Plus
-            </span> */}
-            {/* <span className="rounded-md bg-yellow-200 px-1.5 py-0.5 text-xs font-medium uppercase text-gray-800">
-              NEW
-            </span> */}
-          </span>
+   
           <span className="rounded w-full py-2 px-2 text-xs flex gap-1 items-center justify-between cursor-pointer hover:bg-gray-800 transition-all duration-300">
             <span className="flex gap-2 items-center justify-center text-sm font-bold">
               <img

@@ -14,18 +14,26 @@ function LeftNav() {
           ? "h-screen bg-red-800/80 w-[300px] border-r border-gray-500 hidden lg:flex items-center justify-between p-2 text-white flex-col translate-x-0"
           : "hidden"
       }
+
+      style={{
+        backgroundImage: "url('/campus.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+       
+        opacity: 0.9, // Increase the opacity of the text (0.9 is an example)
+      }}
     >
       
       <div className="flex items-start justify-between w-full">
         <span
-          className="border border-gray-500  rounded w-[80%] py-2 text-xs flex gap-1 items-center justify-center cursor-pointer"
+          className="border border-gray-800 bg-gray-800 transition-all duration-300 rounded w-[80%] py-2 text-xs flex gap-1 items-center justify-center cursor-pointer"
           onClick={() => window.location.reload()}
         >
           <AiOutlinePlus fontSize={18} />
           New Chat
         </span>
         <span
-          className="border border-gray-500  rounded px-3 py-[9px] flex items-center justify-center cursor-pointer"
+          className="border border-gray-800 bg-gray-800  transition-all duration-300 rounded px-3 py-[9px] flex items-center justify-center cursor-pointer"
           title="Close sidebar"
           onClick={() => setShowSlide(!showSlide)}
         >
@@ -98,6 +106,17 @@ function LeftNav() {
           <span className="flex gap-2 items-center justify-center text-base">
             <FiMessageSquare />
             <span className="text-sm">SEA's Objective</span>
+          </span>
+        </span>
+
+        <span
+          className="rounded w-full py-3 px-2 text-xs my-2 flex gap-2 items-center justify-between cursor-pointer hover:bg-gray-800 transition-all duration-300 overflow-hidden truncate whitespace-nowrap "
+          value={"What is CpE?"}
+          onClick={handleQuery}
+        >
+          <span className="flex gap-2 items-center justify-center text-base">
+            <FiMessageSquare />
+            <span className="text-sm">Campus Map</span>
           </span>
         </span>
 

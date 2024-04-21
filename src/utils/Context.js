@@ -26,26 +26,48 @@ const AppContext = ({ children }) => {
     setChatValue("");
     setMessage([...message, { text, isBot: false }]);
     
-    let response = "Sorry, I couldn't understand your question.";
+    let response;
   
-    // Iterate through each item in details
-    details.forEach((output) => {
-      // Check if the user's message includes any keyword from output.questions
-      if (text.includes(output.questions.toLowerCase())) {
-        // Set the response to output.chatmessages
-        response = output.chatmessages;
-      }
-    });
+    // Check if the user's message includes keywords related to maps
+    if (text.includes("map")) {
+      // Set the response to the path of the map image
+      response = "../../map.jpg"; // Replace with the actual path to the map image
+    } else {
+      // Iterate through each item in details
+      details.forEach((output) => {
+        // Check if the user's message includes any keyword from output.questions
+        if (text.includes(output.questions.toLowerCase())) {
+          // Set the response to output.chatmessages
+          response = output.chatmessages;
+        }
+      });
+    }
   
-    // Add a delay of 1 second (1000 milliseconds) before showing the bot response
-    setTimeout(() => {
+    // If response is still not set, display default message
+    if (!response) {
+      response = "Sorry, I couldn't understand your question.";
+    }
+  
+    // If the response is an image, wrap it in the image tag
+    if (response.includes('.jpg') || response.includes('.png')) {
       setMessage([
         ...message,
         { text, isBot: false },
-        { text: response, isBot: true },
+        { text: <img src={response} alt="Bot" className="w-100 h-100 object-cover rounded-sm" />, isBot: true },
       ]);
-    }, 200);
+    } else {
+      // Add a delay before showing the bot response
+      setTimeout(() => {
+        setMessage([
+          ...message,
+          { text, isBot: false },
+          { text: response, isBot: true },
+        ]);
+      }, 200);
+    }
   };
+  
+  
   
 
   // Enter Click function
@@ -60,26 +82,42 @@ const AppContext = ({ children }) => {
     const text = e.target.innerText;
     setMessage([...message, { text, isBot: false }]);
     
-    let response = "Sorry, I couldn't understand your question.";
+    let response;
   
-    // Iterate through each item in details
-    details.forEach((output) => {
-      // Check if the user's message includes any keyword from output.questions
-      if (text.toLowerCase().includes(output.questions.toLowerCase())) {
-        // Set the response to output.chatmessages
-        response = output.chatmessages;
-      }
-    });
+    // Check if the user's message includes keywords related to maps
+    if (text.toLowerCase().includes("map")) {
+      // Set the response to the path of the map image
+      response = "../../map.jpg"; // Replace with the actual path to the map image
+    } else {
+      // Iterate through each item in details
+      details.forEach((output) => {
+        // Check if the user's message includes any keyword from output.questions
+        if (text.toLowerCase().includes(output.questions.toLowerCase())) {
+          // Set the response to output.chatmessages
+          response = output.chatmessages;
+        }
+      });
+    }
   
-    // Add a delay of 1 second (1000 milliseconds) before showing the bot response
-    setTimeout(() => {
+    // If response is still not set, display default message
+    if (response.includes('.jpg') || response.includes('.png')) {
       setMessage([
         ...message,
         { text, isBot: false },
-        { text: response, isBot: true },
+        { text: <img src={response} alt="Bot" className="w-100 h-100 object-cover rounded-sm" />, isBot: true },
       ]);
-    }, 200);
+    } else {
+      // Add a delay before showing the bot response
+      setTimeout(() => {
+        setMessage([
+          ...message,
+          { text, isBot: false },
+          { text: response, isBot: true },
+        ]);
+      }, 200);
+    }
   };
+  
   
   const [details, setDetails] = useState([]);
 
