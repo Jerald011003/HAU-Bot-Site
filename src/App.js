@@ -1,10 +1,13 @@
 import Home from "./Page/Home";
 
-
 function App() {
+  
   return (
-    <div className="overflow-hidden">
-      <Home />
+    <div>
+   
+      <div className="overflow-hidden">
+        <Home />
+      </div>
     </div>
   );
 }

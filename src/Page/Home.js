@@ -1,11 +1,19 @@
-import React from "react";
+import React  from "react";
 import LeftNav from "../components/LeftNav";
 import ChatContainer from "../components/ChatContainer";
 import Mobile from "../components/Mobile";
 
+// import axios from 'axios';
+// import { useState, useEffect } from "react";
+
 function Home() {
+
+
+
   return (
     <div className="flex w-screen relative">
+
+
       <LeftNav />
       <ChatContainer />
       

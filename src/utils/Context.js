@@ -1,5 +1,6 @@
 import { createContext, useEffect, useRef, useState } from "react";
 import { sendMsgToAI } from "./OpenAi";
+import axios from 'axios';
 export const ContextApp = createContext();
 
 const AppContext = ({ children }) => {
@@ -21,31 +22,28 @@ const AppContext = ({ children }) => {
 
   // button Click function
   const handleSend = async () => {
-  const text = chatValue.toLowerCase(); // Convert the input text to lowercase
-  setChatValue("");
-  setMessage([...message, { text, isBot: false }]);
+    const text = chatValue.toLowerCase(); // Convert the input text to lowercase
+    setChatValue("");
+    setMessage([...message, { text, isBot: false }]);
+    
+    let response = "Sorry, I couldn't understand your question.";
   
-  // Simulated AI response
-  let response;
-  const lowercaseText = text.toLowerCase(); // Convert the input text to lowercase
+    // Iterate through each item in details
+    details.forEach((output) => {
+      // Check if the user's message includes any keyword from output.questions
+      if (text.includes(output.questions.toLowerCase())) {
+        // Set the response to output.chatmessages
+        response = output.chatmessages;
+      }
+    });
   
-  if (lowercaseText.includes("courses")) {
-    response = "The School of Engineering and Architecture (SEA) offers various courses including Computer Engineering, Civil Engineering, Electrical Engineering, and Architecture.";
-  } else if (lowercaseText.includes("hello")) {
-    response = "Hi, I'm ChatBot ISay-A, How can I assist you today?";
-  } else if (lowercaseText.includes("cpe course")) {
-    response = "Computer Engineering is a discipline that integrates several fields of computer science and electronics engineering to develop computer hardware and software.";
-  } else {
-    response = "Sorry, I couldn't understand your question.";
-  }
-
-  setMessage([
-    ...message,
-    { text, isBot: false },
-    { text: response, isBot: true },
-  ]);
-};
-
+    setMessage([
+      ...message,
+      { text, isBot: false },
+      { text: response, isBot: true },
+    ]);
+  };
+  
 
   // Enter Click function
   const handleKeyPress = (e) => {
@@ -75,6 +73,15 @@ const AppContext = ({ children }) => {
       { text: response, isBot: true },
     ]);
   };
+  const [details, setDetails] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:8000')
+      .then(res => {
+        setDetails(res.data);
+      })
+      .catch(err => { });
+  }, []);
 
 
   return (
@@ -93,6 +100,17 @@ const AppContext = ({ children }) => {
         handleQuery,
       }}
     >
+      
+{/* <header>Data Generated from Djangoo</header>
+      <hr></hr>
+      {details.map((output, id) => (
+        <div key={id}>
+          <div>
+            <h2>{output.chatmessages}</h2>
+            <h3>{output.questions}</h3>
+          </div>
+        </div>
+      ))} */}
       {children}
     </ContextApp.Provider>
   );
