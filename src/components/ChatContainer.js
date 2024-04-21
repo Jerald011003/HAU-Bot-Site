@@ -27,8 +27,7 @@ function ChatContainer() {
         backgroundImage: "url('/campus.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-       
-        opacity: 0.9, // Increase the opacity of the text (0.9 is an example)
+        opacity: 0.9,
       }}
     >
 

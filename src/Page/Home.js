@@ -3,9 +3,6 @@ import LeftNav from "../components/LeftNav";
 import ChatContainer from "../components/ChatContainer";
 import Mobile from "../components/Mobile";
 
-// import axios from 'axios';
-// import { useState, useEffect } from "react";
-
 function Home() {
 
 

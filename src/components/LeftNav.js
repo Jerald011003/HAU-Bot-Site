@@ -7,7 +7,7 @@ import { ContextApp } from "../utils/Context";
 function LeftNav() {
   const { setShowSlide, showSlide, handleQuery } = useContext(ContextApp);
   return (
-    // top section
+
     <div
       className={
         !showSlide
@@ -20,7 +20,7 @@ function LeftNav() {
       //   backgroundSize: "cover",
       //   backgroundPosition: "center",
        
-      //   opacity: 0.9, // Increase the opacity of the text (0.9 is an example)
+      //   opacity: 0.9,
       // }}
     >
       
