@@ -22,7 +22,7 @@ function Chat() {
               className="w-10 h-10 rounded object-cover "
             />
             
-            <p className={msg.isBot ? "text-white text-[15px]" : "text-black font-semibold text-[15px]"}>{msg?.text}</p>
+            <p className={msg.isBot ? "text-white text-[15px]" : "text-white font-semibold text-[15px]"}>{msg?.text}</p>
           </span>
         ))}
         <div ref={msgEnd} />

@@ -11,17 +11,17 @@ function Mobile() {
       <div
         className={
           Mobile
-            ? "h-screen bg-red-500 w-[300px]  flex items-center justify-between p-2 text-white flex-col translate-x-0"
+            ? "h-screen bg-red-500/80 w-[300px]  flex items-center justify-between p-2 text-white flex-col translate-x-0"
             : "hidden"
         }
 
-        style={{
-          backgroundImage: "url('/campus.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+        // style={{
+        //   backgroundImage: "url('/campus.jpg')",
+        //   backgroundSize: "cover",
+        //   backgroundPosition: "center",
          
-          opacity: 0.9, // Increase the opacity of the text (0.9 is an example)
-        }}
+        //   opacity: 0.9, // Increase the opacity of the text (0.9 is an example)
+        // }}
       >
         <div className="flex items-start justify-between w-full">
           <span

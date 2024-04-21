@@ -23,6 +23,13 @@ function ChatContainer() {
           ? "h-screen w-screen bg-white-500 flex items-start justify-between flex-col p-2"
           : "h-screen w-full lg:w-[calc(100%-300px)] bg-white flex items-start justify-between flex-col p-2"
       }
+      style={{
+        backgroundImage: "url('/campus.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+       
+        opacity: 0.9, // Increase the opacity of the text (0.9 is an example)
+      }}
     >
 
       <span
@@ -45,11 +52,11 @@ function ChatContainer() {
       
       {/* chat input section */}
       <div className=" w-full  m-auto flex items-center justify-center flex-col gap-2 my-2">
-        <span className="flex gap-2 items-center justify-center bg-gray-600 rounded-lg shadow-md w-[90%] lg:w-4/5 xl:w-4/5">
+        <span className="flex gap-2 items-center justify-center bg-white rounded-lg shadow-md w-[90%] lg:w-4/5 xl:w-4/5">
           <input
             type="text"
             placeholder="Send a message"
-            className="h-full  text-white bg-transparent px-3 py-4 w-full border-none outline-none text-base"
+            className="h-full  text-gray bg-transparent px-3 py-4 w-full border-none outline-none text-base"
             value={chatValue}
             onChange={(e) => setChatValue(e.target.value)}
             onKeyUp={handleKeyPress}

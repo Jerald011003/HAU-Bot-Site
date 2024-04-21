@@ -15,13 +15,13 @@ function LeftNav() {
           : "hidden"
       }
 
-      style={{
-        backgroundImage: "url('/campus.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+      // style={{
+      //   backgroundImage: "url('/campus.jpg')",
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
        
-        opacity: 0.9, // Increase the opacity of the text (0.9 is an example)
-      }}
+      //   opacity: 0.9, // Increase the opacity of the text (0.9 is an example)
+      // }}
     >
       
       <div className="flex items-start justify-between w-full">
