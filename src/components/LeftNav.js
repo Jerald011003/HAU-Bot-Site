@@ -26,14 +26,14 @@ function LeftNav() {
       
       <div className="flex items-start justify-between w-full">
         <span
-          className="border border-gray-800 bg-gray-800 transition-all duration-300 rounded w-[80%] py-2 text-xs flex gap-1 items-center justify-center cursor-pointer"
+          className="border border-gray-600 bg-gray-600 transition-all duration-300 rounded w-[80%] py-2 text-xs flex gap-1 items-center justify-center cursor-pointer"
           onClick={() => window.location.reload()}
         >
           <AiOutlinePlus fontSize={18} />
           New Chat
         </span>
         <span
-          className="border border-gray-800 bg-gray-800  transition-all duration-300 rounded px-3 py-[9px] flex items-center justify-center cursor-pointer"
+          className="border border-gray-600 bg-gray-600  transition-all duration-300 rounded px-3 py-[9px] flex items-center justify-center cursor-pointer"
           title="Close sidebar"
           onClick={() => setShowSlide(!showSlide)}
         >
@@ -124,7 +124,7 @@ function LeftNav() {
       {/* bottom section  */}
       <div className="w-full  border-white-600 flex flex-col gap-2 items-center justify-center p-2">
      
-        <span className="rounded w-full py-2 px-2 text-xs flex gap-1 items-center justify-between cursor-pointer hover:bg-gray-800 transition-all duration-300">
+        <span className="rounded w-full py-2 px-2 text-xs flex gap-1 items-center justify-between cursor-pointer hover:bg-gray-600 transition-all duration-300">
           <span className="flex gap-2 items-center justify-center text-sm font-bold">
             <img
               src="/user.jpeg"

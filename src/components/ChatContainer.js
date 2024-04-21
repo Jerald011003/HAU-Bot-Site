@@ -40,7 +40,7 @@ function ChatContainer() {
         {showSlide && <LuPanelLeftOpen />}
       </span>
       <span
-        className="rounded px-3 py-[9px] lg:hidden flex items-center justify-center cursor-pointer text-gray mt-0 mb-3 hover:bg-gray-600 hover:text-white   border border-gray-600"
+        className="rounded px-3 py-[9px] lg:hidden border-white flex items-center justify-center cursor-pointer text-white mt-0 mb-3 hover:bg-gray-600 hover:text-white   border border-gray-600"
         title="Open sidebar"
         onClick={() => setMobile(!Mobile)}
       >
