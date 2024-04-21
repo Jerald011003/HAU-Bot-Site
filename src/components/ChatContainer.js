@@ -24,10 +24,11 @@ function ChatContainer() {
           : "h-screen w-full lg:w-[calc(100%-300px)] bg-white flex items-start justify-between flex-col p-2"
       }
       style={{
-        backgroundImage: "url('/campus.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        opacity: 0.9,
+        backgroundImage: "url('/favicon.ico')",
+    backgroundSize: "20%", // Adjust the percentage as needed
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    opacity: 0.9,
       }}
     >
 
@@ -39,7 +40,7 @@ function ChatContainer() {
         {showSlide && <LuPanelLeftOpen />}
       </span>
       <span
-        className="rounded px-3 py-[9px] lg:hidden border-white flex items-center justify-center cursor-pointer text-white mt-0 mb-3 hover:bg-gray-600 hover:text-white   border border-gray-600"
+        className="rounded px-3 py-[9px] lg:hidden border-white flex items-center justify-center cursor-pointer text-gray-500 mt-0 mb-3 hover:bg-gray-600 hover:text-white   border border-gray-600"
         title="Open sidebar"
         onClick={() => setMobile(!Mobile)}
       >

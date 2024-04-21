@@ -11,18 +11,18 @@ function Chat() {
             key={i}
             className={
               msg.isBot
-                ? "flex items-start justify-center gap-2 lg:gap-5 my-2 bg-red-800/80 p-3 rounded-md "
+                ? "flex items-start justify-center gap-2 lg:gap-5 my-2 bg-gray-800/80 p-3 rounded-md "
                 : "flex items-start justify-center gap-2 lg:gap-5 my-2 p-3"
             }
           >
     
             <img
-              src={msg.isBot ? "/icon.png" : "/user.jpeg"}
+              src={msg.isBot ? "/favicon.ico" : "/user.jpeg"}
               alt="user"
               className="w-10 h-10 rounded object-cover "
             />
             
-            <p className={msg.isBot ? "text-white text-[15px]" : "text-white font-semibold text-[15px]"}>{msg?.text}</p>
+            <p className={msg.isBot ? "text-white text-[15px]" : "text-black-200 font-semibold text-[15px]"}>{msg?.text}</p>
           </span>
         ))}
         <div ref={msgEnd} />

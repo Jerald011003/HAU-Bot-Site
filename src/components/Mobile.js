@@ -15,13 +15,13 @@ function Mobile() {
             : "hidden"
         }
 
-        // style={{
-        //   backgroundImage: "url('/campus.jpg')",
-        //   backgroundSize: "cover",
-        //   backgroundPosition: "center",
+        style={{
+          backgroundImage: "url('/campus.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
          
-        //   opacity: 0.9,
-        // }}
+          opacity: 0.9,
+        }}
       >
         <div className="flex items-start justify-between w-full">
           <span
