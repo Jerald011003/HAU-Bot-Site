@@ -28,25 +28,70 @@ function Mobile() {
         <div className="h-[80%] w-full p-2 flex items-start justify-start flex-col overflow-hidden overflow-y-auto text-sm scroll my-2">
           {/* msg  */}
           <span
-            className="rounded w-full py-3 px-2 text-xs my-2 flex gap-1 items-center justify-between cursor-pointer hover:bg-gray-800 transition-all duration-300 overflow-hidden truncate whitespace-nowrap"
-            value={"What is Programming?"}
-            onClick={handleQuery}
-          >
-            <span className="flex gap-2 items-center justify-center text-base">
-              <FiMessageSquare />
-              <span className="text-sm">What are the courses offered in SEA?</span>
-            </span>
+          className="rounded w-full py-3 px-2 text-xs my-2 flex gap-1 items-center justify-between cursor-pointer hover:bg-gray-800 transition-all duration-300 overflow-hidden truncate whitespace-nowrap"
+          value={"What are Courses?"}
+          onClick={handleQuery}
+        >
+          <span className="flex gap-2 items-center justify-center text-base">
+            <FiMessageSquare />
+            <span className="text-sm">What are the courses offered in SEA?</span>
           </span>
-          <span
-            className="rounded w-full py-3 px-2 text-xs my-2 flex gap-2 items-center justify-between cursor-pointer hover:bg-gray-800 transition-all duration-300 overflow-hidden truncate whitespace-nowrap "
-            value={"How to use an API?"}
-            onClick={handleQuery}
-          >
-            <span className="flex gap-2 items-center justify-center text-base">
-              <FiMessageSquare />
-              <span className="text-sm">What is Computer Engineering Course?</span>
-            </span>
+        </span>
+
+        <span
+          className="rounded w-full py-3 px-2 text-xs my-2 flex gap-2 items-center justify-between cursor-pointer hover:bg-gray-800 transition-all duration-300 overflow-hidden truncate whitespace-nowrap "
+          value={"What is CpE?"}
+          onClick={handleQuery}
+        >
+          <span className="flex gap-2 items-center justify-center text-base">
+            <FiMessageSquare />
+            <span className="text-sm">What is CpE Course?</span>
           </span>
+        </span>
+
+        <span
+          className="rounded w-full py-3 px-2 text-xs my-2 flex gap-2 items-center justify-between cursor-pointer hover:bg-gray-800 transition-all duration-300 overflow-hidden truncate whitespace-nowrap "
+          value={"What is CpE?"}
+          onClick={handleQuery}
+        >
+          <span className="flex gap-2 items-center justify-center text-base">
+            <FiMessageSquare />
+            <span className="text-sm">SEA's History</span>
+          </span>
+        </span>
+
+        <span
+          className="rounded w-full py-3 px-2 text-xs my-2 flex gap-2 items-center justify-between cursor-pointer hover:bg-gray-800 transition-all duration-300 overflow-hidden truncate whitespace-nowrap "
+          value={"What is CpE?"}
+          onClick={handleQuery}
+        >
+          <span className="flex gap-2 items-center justify-center text-base">
+            <FiMessageSquare />
+            <span className="text-sm">SEA's Vision</span>
+          </span>
+        </span>
+
+        <span
+          className="rounded w-full py-3 px-2 text-xs my-2 flex gap-2 items-center justify-between cursor-pointer hover:bg-gray-800 transition-all duration-300 overflow-hidden truncate whitespace-nowrap "
+          value={"What is CpE?"}
+          onClick={handleQuery}
+        >
+          <span className="flex gap-2 items-center justify-center text-base">
+            <FiMessageSquare />
+            <span className="text-sm">SEA's Mission</span>
+          </span>
+        </span>
+
+        <span
+          className="rounded w-full py-3 px-2 text-xs my-2 flex gap-2 items-center justify-between cursor-pointer hover:bg-gray-800 transition-all duration-300 overflow-hidden truncate whitespace-nowrap "
+          value={"What is CpE?"}
+          onClick={handleQuery}
+        >
+          <span className="flex gap-2 items-center justify-center text-base">
+            <FiMessageSquare />
+            <span className="text-sm">SEA's Objective</span>
+          </span>
+        </span>
         </div>
         {/* bottom section  */}
         <div className="w-full border-gray-600 flex flex-col gap-2 items-center justify-center p-2">

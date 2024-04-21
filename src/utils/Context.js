@@ -44,7 +44,7 @@ const AppContext = ({ children }) => {
         { text, isBot: false },
         { text: response, isBot: true },
       ]);
-    }, 500);
+    }, 200);
   };
   
 
@@ -71,11 +71,14 @@ const AppContext = ({ children }) => {
       }
     });
   
-    setMessage([
-      ...message,
-      { text, isBot: false },
-      { text: response, isBot: true },
-    ]);
+    // Add a delay of 1 second (1000 milliseconds) before showing the bot response
+    setTimeout(() => {
+      setMessage([
+        ...message,
+        { text, isBot: false },
+        { text: response, isBot: true },
+      ]);
+    }, 200);
   };
   
   const [details, setDetails] = useState([]);
