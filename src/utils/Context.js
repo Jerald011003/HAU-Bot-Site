@@ -25,26 +25,24 @@ const AppContext = ({ children }) => {
     const text = chatValue.toLowerCase(); // Convert the input text to lowercase
     setChatValue("");
     setMessage([...message, { text, isBot: false }]);
-    
+  
     let response;
   
     // Check if the user's message includes keywords related to maps
-    if (text.includes("map")) {
+    details.forEach((output) => {
+      // Check if the user's message includes any keyword from output.questions
+      if (text.includes(output.questions.toLowerCase())) {
+        // Set the response to output.chatmessages
+        response = output.chatmessages;
+      }
+    });
+  
+    // If the response is still not set, and if text includes map, display map image
+    if (!response && text.includes("map")) {
       // Set the response to the path of the map image
       response = "../../map.jpg"; // Replace with the actual path to the map image
-    } else {
-      // Iterate through each item in details
-      details.forEach((output) => {
-        // Check if the user's message includes any keyword from output.questions
-        if (text.includes(output.questions.toLowerCase())) {
-          // Set the response to output.chatmessages
-          response = output.chatmessages;
-        }
-      });
-    }
-  
-    // If response is still not set, display default message
-    if (!response) {
+    } else if (!response) {
+      // If response is still not set, display default message
       response = "Sorry, I couldn't understand your question.";
     }
   
@@ -66,6 +64,7 @@ const AppContext = ({ children }) => {
       }, 200);
     }
   };
+  
   
   
   
