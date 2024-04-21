@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ContextApp } from "../utils/Context";
-
+import "../App.css";
 function Chat() {
   const { message, msgEnd } = useContext(ContextApp);
   return (
@@ -19,7 +19,7 @@ function Chat() {
             <img
               src={msg.isBot ? "/favicon.ico" : "/user.jpeg"}
               alt="user"
-              className="w-10 h-10 rounded object-cover "
+              className={`w-10 h-10 rounded object-cover ${msg.isBot ? 'bounce' : ''}`}
             />
             
             <p className={msg.isBot ? "text-white text-[15px]" : "text-black-200 font-semibold text-[15px]"}>{msg?.text}</p>
@@ -32,3 +32,4 @@ function Chat() {
 }
 
 export default Chat;
+
